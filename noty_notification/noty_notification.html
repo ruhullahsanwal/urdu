@@ -1,0 +1,59 @@
+<html>
+<head>
+<!-- Noty Notification -->
+    <link rel="stylesheet" type="text/css" href="https://rawgit.com/needim/noty/master/demo/animate.css"/>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+<!-- Noty Notification -->
+</head>
+<body>
+    <div class="container">
+
+        <div id="customContainer"></div>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.1.0.slim.min.js"></script>
+<!-- noty -->
+    <script type="text/javascript" src="https://rawgit.com/needim/noty/master/js/noty/packaged/jquery.noty.packaged.min.js"></script>
+    <script type="text/javascript" src="https://rawgit.com/ruhullahsanwal/urdu/master/noty_notification/notification_html.js"></script>
+
+    <script type="text/javascript">
+
+
+        function generate(type, text) {
+
+            var n = noty({
+                text        : text,
+                type        : alert,
+                dismissQueue: true,
+                layout      : 'topRight',
+                closeWith   : ['click'],
+                theme       : 'defaultTheme',
+                maxVisible  : 10,
+                animation   : {
+                    open  : 'animated bounceInRight',
+                    close : 'animated bounceOutRight',
+                    easing: 'swing',
+                    speed : 500
+                }
+            });
+            console.log('html: ' + n.options.id);
+        }
+
+        function generateAll() {
+            generate('information', notification_html[2]);
+//            generate('notification');
+//            generate('success');
+        }
+
+        $(document).ready(function () {
+
+            setTimeout(function() {
+                generateAll();
+            }, 500);
+
+        });
+
+    </script>
+</body>
+</html>
