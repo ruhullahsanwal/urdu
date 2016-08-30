@@ -16,7 +16,7 @@ $.noty.layouts.topRight = {
                 margin       : 0,
                 padding      : 0,
                 listStyleType: 'none',
-                zIndex       : 10000000
+                zIndex       : 4
             });
 
             if(window.innerWidth < 600) {
